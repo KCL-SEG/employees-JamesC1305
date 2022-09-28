@@ -29,7 +29,6 @@ class Employee:
 
 
     def __str__(self):
-        string = ""
         if self.contractType == "salary":
             if self.commissionValue:
                 if self.contractsLanded:
@@ -64,3 +63,4 @@ robbie = Employee('Robbie', "salary", 2000, commissionValue=1500)
 
 # Ariel works on a contract of 120 hours at 30/hour and receives a bonus commission of 600.  Their total pay is 4200.
 ariel = Employee('Ariel', "contract", 30, hours=120, commissionValue=600)
+
