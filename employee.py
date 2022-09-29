@@ -12,20 +12,21 @@ class Employee:
 
 
     def get_pay(self):
+        self.pay = 0
         if self.contractType == "contract":
-            self.wage *= self.hours
+            self.pay = self.wage * self.hours
             if self.commissionValue:
                 if self.contractsLanded:   
-                    self.wage += self.contractsLanded*self.commissionValue
+                    self.pay = self.contractsLanded*self.commissionValue + self.wage
                 else:
-                    self.wage += self.commissionValue
+                    self.pay = self.commissionValue + self.wage
         else:
                 if self.commissionValue:        
                     if self.contractsLanded:
-                        self.wage += self.contractsLanded*self.commissionValue
+                        self.pay = self.contractsLanded*self.commissionValue + self.wage
                     else:
-                        self.wage += self.commissionValue
-        return self.wage
+                        self.pay = self.commissionValue + self.wage
+        return self.pay
 
 
     def __str__(self):
