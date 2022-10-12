@@ -8,7 +8,7 @@ class Contract():
     def __init__(self):
         pass
 
-    def getSalary(self):
+    def getContract(self):
         pass
 
     def __str__(self):
@@ -19,7 +19,7 @@ class SalaryContract(Contract):
         super().__init__()
         self.salary = salary
     
-    def getSalary(self):
+    def getContract(self):
         return self.salary
 
     def __str__(self):
@@ -31,7 +31,7 @@ class HourlyContract(Contract):
         self.hourlyWage = hourlyWage
         self.hoursWorked = hoursWorked
 
-    def getSalary(self):
+    def getContract(self):
         return self.hoursWorked * self.hourlyWage
 
     def __str__(self):
@@ -88,11 +88,13 @@ class Employee():
         self.name = name
         self.contract = contract
         self.commission = commission
-        self.totalPay = contract.getSalary() + commission.getCommission()
 
 
     def __str__(self):
-        return f"{self.name} " + self.contract.__str__() + self.commission.__str__() + f".  Their total pay is {self.totalPay}."
+        return f"{self.name} " + self.contract.__str__() + self.commission.__str__() + f".  Their total pay is {self.get_pay()}."
+
+    def get_pay(self):
+        return self.contract.getContract() + self.commission.getCommission()
         
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
