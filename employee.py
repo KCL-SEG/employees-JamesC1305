@@ -35,7 +35,7 @@ class HourlyContract(Contract):
         return self.hoursWorked * self.hourlyWage
 
     def __str__(self):
-        return f"works on a contract of {self.hoursWorked} at {self.hourlyWage}/hour"
+        return f"works on a contract of {self.hoursWorked} hours at {self.hourlyWage}/hour"
 
 class Commission():
     def __init__(self):
